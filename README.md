@@ -29,3 +29,7 @@ The executed project doesn't have the instructions between `#if !NDEBUG` preproc
 ## References
 
 1. [Article about it in Elias Daler Blog](https://edw.is/using-cmake)
+
+## Notes
+
+If you see something can be improved or anything is wrong, please write an issue in the project, it helps me keeping improving!
