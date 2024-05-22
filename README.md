@@ -1,6 +1,6 @@
 # cpp-cmake-dependency-management
 
-An example on how to manage dependencies with CMAKE and the SFML library.
+An example on how to manage dependencies with CMAKE using the SFML library. Also it's an example to shw how to build in **DEBUG** , **RELEASE** modes.
 
 ## Debug build instructions
 
