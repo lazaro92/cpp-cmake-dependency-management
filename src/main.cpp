@@ -9,18 +9,18 @@ int main() {
   #endif 
 
 
-  sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+  sf::RenderWindow window(sf::VideoMode({200, 200}), "SFML works!");
   sf::CircleShape shape(100.f);
   
   #if !NDEBUG
     sf::Font font;
-    sf::Text text;
 
-    if (!font.loadFromFile("media/Sansation.ttf")) {
+    if (!font.openFromFile("media/Sansation.ttf")) {
       return -1;
     }
+
+    sf::Text text(font);
     text.setString("DEBUG MODE");
-    text.setFont(font);
     text.setCharacterSize(24);
     text.setFillColor(sf::Color::White);
   #endif
@@ -28,9 +28,8 @@ int main() {
   shape.setFillColor(sf::Color::Green);
 
   while (window.isOpen()) {
-    sf::Event event;
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
+    while (const std::optional event = window.pollEvent()) {
+      if (event->is<sf::Event::Closed>()) {
         window.close();
       }
     }
